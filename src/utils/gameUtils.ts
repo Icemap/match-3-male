@@ -1,7 +1,6 @@
-
 import { GamePiece, PieceType } from '@/types/game';
 
-const PIECE_TYPES: PieceType[] = ['basketball', 'football', 'baseball', 'tennisball'];
+const PIECE_TYPES: PieceType[] = ['pingpong', 'eightball', 'swimmer', 'basketball'];
 
 export const generateRandomPieceType = (): PieceType => {
   // 10% chance to generate a blocker

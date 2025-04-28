@@ -9,63 +9,94 @@ interface SportsBallProps {
 export const Basketball: React.FC<SportsBallProps> = ({ special }) => {
   return (
     <div className={cn(
-      "w-[42px] h-[42px] bg-game-orange rounded-full relative overflow-hidden",
+      "w-[42px] h-[42px] relative overflow-hidden",
       "flex items-center justify-center",
       special === 'horizontal-striped' ? "bg-gradient-to-r from-game-orange via-white to-game-orange" : "",
       special === 'vertical-striped' ? "bg-gradient-to-b from-game-orange via-white to-game-orange" : ""
     )}>
-      {!special && (
-        <>
-          <div className="absolute w-full h-[2px] bg-black top-[45%]"></div>
-          <div className="absolute w-full h-[2px] bg-black top-[55%]"></div>
-          <div className="absolute h-full w-[2px] bg-black left-[45%]"></div>
-          <div className="absolute h-full w-[2px] bg-black left-[55%]"></div>
-        </>
+      {!special ? (
+        <img 
+          src="/lovable-uploads/d0c499fd-7c7c-4db9-8598-751fc3066e43.png" 
+          alt="Basketball" 
+          className="w-full h-full object-contain"
+        />
+      ) : (
+        <div className={cn(
+          "w-full h-full bg-center bg-contain bg-no-repeat",
+          "bg-[url('/lovable-uploads/d0c499fd-7c7c-4db9-8598-751fc3066e43.png')]"
+        )}/>
       )}
     </div>
   );
 };
 
-export const Football: React.FC<SportsBallProps> = ({ special }) => {
+export const PingPong: React.FC<SportsBallProps> = ({ special }) => {
   return (
     <div className={cn(
-      "w-[42px] h-[42px] bg-game-brown rounded-md transform rotate-45",
+      "w-[42px] h-[42px] relative overflow-hidden",
       "flex items-center justify-center",
-      special === 'horizontal-striped' ? "bg-gradient-to-r from-game-brown via-white to-game-brown" : "",
-      special === 'vertical-striped' ? "bg-gradient-to-b from-game-brown via-white to-game-brown" : ""
+      special === 'horizontal-striped' ? "bg-gradient-to-r from-game-orange via-white to-game-orange" : "",
+      special === 'vertical-striped' ? "bg-gradient-to-b from-game-orange via-white to-game-orange" : ""
     )}>
-      {!special && (
-        <div className="w-[20px] h-[2px] bg-white"></div>
+      {!special ? (
+        <img 
+          src="/lovable-uploads/b7b89e31-2571-4b55-b55a-b00baf29980a.png" 
+          alt="Ping Pong" 
+          className="w-full h-full object-contain"
+        />
+      ) : (
+        <div className={cn(
+          "w-full h-full bg-center bg-contain bg-no-repeat",
+          "bg-[url('/lovable-uploads/b7b89e31-2571-4b55-b55a-b00baf29980a.png')]"
+        )}/>
       )}
     </div>
   );
 };
 
-export const Baseball: React.FC<SportsBallProps> = ({ special }) => {
+export const EightBall: React.FC<SportsBallProps> = ({ special }) => {
   return (
     <div className={cn(
-      "w-[42px] h-[42px] bg-white rounded-full border-2 border-gray-300",
+      "w-[42px] h-[42px] relative overflow-hidden",
       "flex items-center justify-center",
-      special === 'horizontal-striped' ? "bg-gradient-to-r from-white via-red-200 to-white" : "",
-      special === 'vertical-striped' ? "bg-gradient-to-b from-white via-red-200 to-white" : ""
+      special === 'horizontal-striped' ? "bg-gradient-to-r from-white via-black to-white" : "",
+      special === 'vertical-striped' ? "bg-gradient-to-b from-white via-black to-white" : ""
     )}>
-      {!special && (
-        <div className="w-[30px] h-[30px] border-[2px] border-red-400 border-dashed rounded-full"></div>
+      {!special ? (
+        <img 
+          src="/lovable-uploads/1d8020cf-25f0-4325-9c79-b5fd521e1874.png" 
+          alt="Eight Ball" 
+          className="w-full h-full object-contain"
+        />
+      ) : (
+        <div className={cn(
+          "w-full h-full bg-center bg-contain bg-no-repeat",
+          "bg-[url('/lovable-uploads/1d8020cf-25f0-4325-9c79-b5fd521e1874.png')]"
+        )}/>
       )}
     </div>
   );
 };
 
-export const TennisBall: React.FC<SportsBallProps> = ({ special }) => {
+export const Swimmer: React.FC<SportsBallProps> = ({ special }) => {
   return (
     <div className={cn(
-      "w-[42px] h-[42px] bg-game-yellow rounded-full",
+      "w-[42px] h-[42px] relative overflow-hidden",
       "flex items-center justify-center",
-      special === 'horizontal-striped' ? "bg-gradient-to-r from-game-yellow via-white to-game-yellow" : "",
-      special === 'vertical-striped' ? "bg-gradient-to-b from-game-yellow via-white to-game-yellow" : ""
+      special === 'horizontal-striped' ? "bg-gradient-to-r from-game-orange via-white to-game-orange" : "",
+      special === 'vertical-striped' ? "bg-gradient-to-b from-game-orange via-white to-game-orange" : ""
     )}>
-      {!special && (
-        <div className="w-[30px] h-[30px] border-[2px] border-white border-dashed rounded-full"></div>
+      {!special ? (
+        <img 
+          src="/lovable-uploads/9554cea5-78d3-42c0-9253-5bcfa5cc1007.png" 
+          alt="Swimmer" 
+          className="w-full h-full object-contain"
+        />
+      ) : (
+        <div className={cn(
+          "w-full h-full bg-center bg-contain bg-no-repeat",
+          "bg-[url('/lovable-uploads/9554cea5-78d3-42c0-9253-5bcfa5cc1007.png')]"
+        )}/>
       )}
     </div>
   );

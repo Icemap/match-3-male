@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { GamePiece as GamePieceType } from '@/types/game';
-import { Basketball, Football, Baseball, TennisBall } from '@/components/SportsBalls';
+import { Basketball, PingPong, EightBall, Swimmer } from '@/components/SportsBalls';
 import { cn } from '@/lib/utils';
 
 interface GamePieceProps {
@@ -15,12 +15,12 @@ const GamePiece: React.FC<GamePieceProps> = ({ piece, isSelected, onClick }) => 
     switch (piece.type) {
       case 'basketball':
         return <Basketball special={piece.special} />;
-      case 'football':
-        return <Football special={piece.special} />;
-      case 'baseball':
-        return <Baseball special={piece.special} />;
-      case 'tennisball':
-        return <TennisBall special={piece.special} />;
+      case 'pingpong':
+        return <PingPong special={piece.special} />;
+      case 'eightball':
+        return <EightBall special={piece.special} />;
+      case 'swimmer':
+        return <Swimmer special={piece.special} />;
       case 'blocker':
         return (
           <div className="w-full h-full bg-game-brown rounded-md flex items-center justify-center">
@@ -38,7 +38,7 @@ const GamePiece: React.FC<GamePieceProps> = ({ piece, isSelected, onClick }) => 
         "w-[48px] h-[48px] cursor-pointer transition-all m-[2px]",
         "flex items-center justify-center",
         isSelected ? "scale-110 outline outline-2 outline-white" : "",
-        "animate-pop"
+        piece.special ? "animate-pop" : ""
       )}
       onClick={onClick}
     >

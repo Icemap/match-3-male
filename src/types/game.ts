@@ -1,5 +1,5 @@
 
-export type PieceType = 'basketball' | 'football' | 'baseball' | 'tennisball' | 'blocker';
+export type PieceType = 'pingpong' | 'eightball' | 'swimmer' | 'basketball' | 'blocker';
 export type SpecialPieceType = 'horizontal-striped' | 'vertical-striped';
 
 export interface GamePiece {
