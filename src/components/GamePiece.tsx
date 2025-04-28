@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GamePiece as GamePieceType } from '@/types/game';
 import { Basketball, PingPong, EightBall, Swimmer } from '@/components/SportsBalls';
 import { cn } from '@/lib/utils';
@@ -8,9 +8,25 @@ interface GamePieceProps {
   piece: GamePieceType;
   isSelected: boolean;
   onClick: () => void;
+  isNew?: boolean;
+  isMatched?: boolean;
 }
 
-const GamePiece: React.FC<GamePieceProps> = ({ piece, isSelected, onClick }) => {
+const GamePiece: React.FC<GamePieceProps> = ({ 
+  piece, 
+  isSelected, 
+  onClick, 
+  isNew = false,
+  isMatched = false
+}) => {
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    if (isNew) {
+      setShouldAnimate(true);
+    }
+  }, [isNew]);
+
   const renderPiece = () => {
     switch (piece.type) {
       case 'basketball':
@@ -38,9 +54,14 @@ const GamePiece: React.FC<GamePieceProps> = ({ piece, isSelected, onClick }) => 
         "w-[48px] h-[48px] cursor-pointer transition-all m-[2px]",
         "flex items-center justify-center",
         isSelected ? "scale-110 outline outline-2 outline-white" : "",
+        shouldAnimate ? "animate-fall" : "",
+        isMatched ? "animate-burst" : "",
         piece.special ? "animate-pop" : ""
       )}
       onClick={onClick}
+      onAnimationEnd={() => {
+        if (shouldAnimate) setShouldAnimate(false);
+      }}
     >
       {renderPiece()}
     </div>
