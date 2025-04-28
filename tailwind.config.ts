@@ -62,15 +62,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Game specific colors
 				game: {
 					'blue': '#3498db',
 					'orange': '#e67e22',
 					'yellow': '#f1c40f',
 					'green': '#2ecc71',
 					'brown': '#8B4513',
-					'header': '#4a69bd',
-					'board-bg': '#a5b1c2'
+					'header': '#2C3E50',
+					'board-bg': '#ECF0F1'
 				}
 			},
 			borderRadius: {
